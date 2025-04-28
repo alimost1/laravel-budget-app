@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class ExpenseFeatureTest extends TestCase
 {
-    //refresh dabase every time we run test
+    // refresh dabase every time we run test
     use RefreshDatabase;
 
     protected function setUp(): void
@@ -51,7 +51,7 @@ class ExpenseFeatureTest extends TestCase
     public function test_should_update_expense(): void
     {
 
-        //testing if we going to get an eror
+        // testing if we going to get an eror
         $updateResponse = $this->putJson('/api/expenses', [
             'id' => '',
             'name' => '',
@@ -60,11 +60,11 @@ class ExpenseFeatureTest extends TestCase
         ]);
 
         $updateResponse->assertStatus(422);
-        //end
+        // end
 
-        //first create row
+        // first create row
         // return ID
-        //use ID to update this record
+        // use ID to update this record
         $createResponse = $this->postJson('/api/expenses', [
             'name' => 'salary',
             'amount' => 23,
@@ -114,14 +114,14 @@ class ExpenseFeatureTest extends TestCase
      */
     public function test_should_delete_expense(): void
     {
-        //checking if id is valid numbe
+        // checking if id is valid numbe
         $deleteResponse = $this->deleteJson('/api/expenses', [
             'id' => 'dkdkd',
 
         ]);
         $deleteResponse->assertStatus(422);
 
-        //create a record
+        // create a record
         $createResponse = $this->postJson('/api/expenses', [
             'name' => 'food',
             'amount' => 23,
