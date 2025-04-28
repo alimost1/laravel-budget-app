@@ -7,7 +7,7 @@
     <title>Auth Callback</title>
 </head>
 <body>
-    <h1>hello world john</h1>
+    <h1>hello  yoorika</h1>
   
 </body>
 </html>

@@ -24,7 +24,7 @@ WORKDIR /var/www
 
 COPY . /var/www
 # RUN composer install
-
+RUN composer install --no-interaction --no-dev --optimize-autoloader
 # Set permissions for storage and bootstrap/cache directories
 RUN chmod -R u+rwX,g+rwX,o+rwX /var/www/storage && \
     chmod -R u+rwX,g+rwX,o+rwX /var/www/bootstrap/cache && \
@@ -43,4 +43,4 @@ EXPOSE 80
 
 # Use the PORT environment variable for the application
 # CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port"]
-CMD ["php-fpm"]
+CMD ["php-fpm", "-F"]
