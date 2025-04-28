@@ -30,7 +30,7 @@ class OAuthClientSeed extends Seeder
 
         );
 
-        //vue app
+        // vue app
         DB::table('oauth_clients')->insert(
             [
                 'id' => '9ca9a351-601f-41da-90d8-d2c86f80dc6c',

@@ -15,7 +15,7 @@ class PricingFeatureSeed extends Seeder
 
         $table = DB::table('pricing_features');
 
-        //basic
+        // basic
         $table->insert([
             'priceId' => 1,
             'name' => 'Basic expense tracking',
@@ -25,7 +25,7 @@ class PricingFeatureSeed extends Seeder
             'name' => 'Basic reporting',
         ]);
 
-        //pro
+        // pro
 
         $table->insert([
             'priceId' => 2,
@@ -40,7 +40,7 @@ class PricingFeatureSeed extends Seeder
             'name' => 'Income and expense forecasting',
         ]);
 
-        //lifetime
+        // lifetime
 
         $table->insert([
             'priceId' => 3,

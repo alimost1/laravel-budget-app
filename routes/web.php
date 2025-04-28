@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/auth/redirect', [AuthController::class, 'redirectToGoogle']);
-//handle by google
+// handle by google
 Route::get('/auth/callback', [AuthController::class, 'createUserViaGoogle']);
 
 Route::get('/success', [PaymentController::class, 'successPayment'])->name('success');
@@ -40,7 +40,7 @@ Route::get('/cancel', function () {
 // })->name('login');
 
 Route::get('/auth/redirect', [AuthController::class, 'redirectToGoogle']);
-//handle by google
+// handle by google
 Route::get('/auth/callback', [AuthController::class, 'createUserViaGoogle']);
 Route::get('/callback', function (Request $request) {
     $state = $request->session()->pull('state');

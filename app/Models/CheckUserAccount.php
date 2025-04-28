@@ -37,8 +37,8 @@ class CheckUserAccount extends Model
     public static function addTrialDays($userId)
     {
         return DB::transaction(function () use ($userId) {
-            //add trial days
-            //basic price
+            // add trial days
+            // basic price
             $stripePriceId = 'price_1PZbOVHpqk1Ix2np7tbxqlP2';
 
             $paymentTerms = Pricing::getPricingTerms($stripePriceId, date('Y-m-d'));

@@ -10,7 +10,7 @@ class ExpenseUnitTest extends TestCase
     /**
      * name,amount,userId
      */
-    public function test_createEndpoint_should_throw_error_user_not_provide_inputs(): void
+    public function test_create_endpoint_should_throw_error_user_not_provide_inputs(): void
     {
         // ['name is required', 'amount is required', 'userId is']
         $validate = CheckInput::validate([]);
@@ -20,7 +20,7 @@ class ExpenseUnitTest extends TestCase
         $this->assertEquals(3, count($errors['errors']));
     }
 
-    public function test_createEndpoint_amount_is_valid_number(): void
+    public function test_create_endpoint_amount_is_valid_number(): void
     {
 
         $validate = CheckInput::validate([
@@ -35,7 +35,7 @@ class ExpenseUnitTest extends TestCase
         $this->assertEquals(1, count($errors['errors']));
     }
 
-    public function test_createEndpoint_name_is_greater_than_15_chars(): void
+    public function test_create_endpoint_name_is_greater_than_15_chars(): void
     {
 
         $validate = CheckInput::validate([
@@ -53,7 +53,7 @@ class ExpenseUnitTest extends TestCase
     /**
      * id,name,amount,userId
      */
-    public function test_updateEndpoint_should_throw_error_user_not_provide_inputs(): void
+    public function test_update_endpoint_should_throw_error_user_not_provide_inputs(): void
     {
         // ['name is required', 'amount is required', 'userId is']
         $validate = CheckInput::validateUpdate([]);
@@ -63,7 +63,7 @@ class ExpenseUnitTest extends TestCase
         $this->assertEquals(4, count($errors['errors']));
     }
 
-    public function test_updateEnpoint_id_is_valid_number(): void
+    public function test_update_enpoint_id_is_valid_number(): void
     {
 
         $validate = CheckInput::validateUpdate([
@@ -79,7 +79,7 @@ class ExpenseUnitTest extends TestCase
         $this->assertEquals(1, count($errors['errors']));
     }
 
-    public function test_updateEnpoint_amount_is_valid_number(): void
+    public function test_update_enpoint_amount_is_valid_number(): void
     {
 
         $validate = CheckInput::validateUpdate([
@@ -95,7 +95,7 @@ class ExpenseUnitTest extends TestCase
         $this->assertEquals(1, count($errors['errors']));
     }
 
-    public function test_updateEndpoint_name_is_greater_than_15_chars(): void
+    public function test_update_endpoint_name_is_greater_than_15_chars(): void
     {
 
         $validate = CheckInput::validate([

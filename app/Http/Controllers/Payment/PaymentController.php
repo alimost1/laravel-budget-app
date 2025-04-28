@@ -23,7 +23,7 @@ class PaymentController extends Controller
         if (! is_null($checkUserAccount)) {
 
             if ($checkUserAccount->account_status === CheckUserAccount::ACTIVE_USER_ACCOUNT) {
-                //block
+                // block
                 CheckUserAccount::where('user_id', $userId)
                     ->update([
                         'account_status' => CheckUserAccount::IN_ACTIVE_USER_ACCOUNT,
